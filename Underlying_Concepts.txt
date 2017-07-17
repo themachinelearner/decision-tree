@@ -1,0 +1,23 @@
+A decision tree is a supervised classification technique that executes a function (or concept) on a set of data to produce a discrete outcome.
+
+The tree itself is built by examining attributes to see which one should be added next. A popular way to make this decision is to
+choose the one that maximimzes the reduction in entropy (aka maximizes gain). 
+
+You need to worry about overfitting decision trees, and some ways to avoid that include inhibiting the max size of the tree, 
+the max number of samples required for a node, and pruning the tree once created.
+
+Once a tree is created, the task of classfying new instances is trivial. 
+
+Decision trees benefit from being able to see and easily understand the classification process. They do not support missing values, however.
+
+Continuous attributes can be included by turning them into discrete decisions, such as greater than a number or between numbers.
+
+Because the number of possible trees grows so fast (2^2^n), we must rely on local optimality at each node, which means we 
+can't guarantee global optimality. Per SK Learn, we can use several trees in an ensemble learner to combat this problem.
+
+Per SK Learn, the number of samples required to populate the tree doubles with each additional level (at least, right?).
+They recommend setting min_samples_leaf = 5 to start out and then go from there. 
+SK Learn also recommends balancing the classes before training by way of sampling.
+
+
+
